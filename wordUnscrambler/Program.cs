@@ -9,6 +9,7 @@ namespace wordUnscrambler
 {
     public class Program
     {
+
         private static readonly FileReader fileReader = new FileReader();
         private static readonly WordMatcher wordMatcher = new WordMatcher();
 
