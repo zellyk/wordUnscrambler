@@ -31,7 +31,25 @@ namespace wordUnscrambler
 
                     }
                     else 
-                    { }
+                    {
+                        char[] WordArray;
+                        char[] ScrambeledArray;
+
+                        WordArray = word.ToCharArray();
+                        ScrambeledArray = scrambledWord.ToCharArray();
+
+                        Array.Sort(WordArray);
+                        Array.Sort(ScrambeledArray);
+
+                        string ScrambeledS = new string(WordArray);
+                        string WordS = new string(ScrambeledArray);
+
+                        if(ScrambeledS == WordS)
+                        {
+                            matchedWords.Add(new MatchedWord() { ScrambledWord = scrambledWord, Word = word });
+                        }
+
+                    }
                 
                 }
             }
