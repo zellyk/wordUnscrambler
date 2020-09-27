@@ -75,6 +75,11 @@ namespace wordUnscrambler
 
             // call DisplayMatchedScrambledWords passing the scrambled words string array
 
+            string userInput = Console.ReadLine();
+
+            string[] userArray = userInput.Split(',');
+
+            DisplayMatchedScrambledWords(userArray);
 
 
         }
@@ -95,7 +100,7 @@ namespace wordUnscrambler
             {
                 foreach(MatchedWord matched in matchedWords)
                 {
-                    Console.WriteLine("Match found for {0}:{1}", matched.ScrambledWord, matched.Word);
+                    Console.WriteLine(Constant.matchFoundMessage);
                 }
             }
 
