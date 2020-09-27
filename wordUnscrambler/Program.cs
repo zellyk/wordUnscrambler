@@ -79,7 +79,9 @@ namespace wordUnscrambler
         private static void ExecuteScrambledWordsInFileScenario()
         {
             string fileName = Console.ReadLine();
+
             string[] scrambledWords = fileReader.Read(fileName);
+
             DisplayMatchedScrambledWords(scrambledWords);
 
         }
@@ -94,6 +96,11 @@ namespace wordUnscrambler
 
             // call DisplayMatchedScrambledWords passing the scrambled words string array
 
+            string userInput = Console.ReadLine();
+
+            string[] userArray = userInput.Split(',');
+
+            DisplayMatchedScrambledWords(userArray);
 
         }
 
