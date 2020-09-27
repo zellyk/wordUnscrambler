@@ -54,7 +54,7 @@ namespace wordUnscrambler
                 }
             }
 
-            return null;
+            return matchedWords;
         }
 
         MatchedWord BuildMatchedWord(string scrambledWord, string word)
