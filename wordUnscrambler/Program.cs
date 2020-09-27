@@ -102,6 +102,17 @@ namespace wordUnscrambler
 
             List<MatchedWord> matchedWords = wordMatcher.Match(scrambledWords, wordList);
 
+            if (matchedWords.Count == 0) {
+                Console.WriteLine("No match found...");
+            }
+
+            else
+            {
+                foreach(MatchedWord matched in matchedWords)
+                {
+                    Console.WriteLine("Match found for {0}:{1}", matched.ScrambledWord, matched.Word);
+                }
+            }
 
             // rules: use a formatter to display eg {0}{1}...
             // rule use IIF to determine if matchedWords is empty or not.....
