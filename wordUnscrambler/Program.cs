@@ -22,22 +22,22 @@ namespace wordUnscrambler
             {
 
 
-                Console.WriteLine("Enter the scrambled words manually or as a file: f = file, m = manual");
+                Console.WriteLine(Constant.fileSelectionMessage);
 
                 string option = Console.ReadLine() ?? throw new Exception("String is empty");
 
                 switch (option.ToUpper())
                 {
                     case "F":
-                        Console.WriteLine("Enter the path and filename >");
+                        Console.WriteLine(Constant.fileNameMessage);
                         ExecuteScrambledWordsInFileScenario();
                         break;
                     case "M":
-                        Console.WriteLine("Enter word(s) separated by a comma");
+                        Console.WriteLine(Constant.userInputFormatMessage);
                         ExecuteScrambledWordsManualEntryScenario();
                         break;
                     default:
-                        Console.WriteLine("The entered option was not recognized");
+                        Console.WriteLine(Constant.optionNotRecognized);
                         break;
 
                 }
@@ -49,7 +49,7 @@ namespace wordUnscrambler
 
             catch (Exception e)
             {
-                Console.WriteLine("Sorry a error has occurred..." + e.Message);
+                Console.WriteLine(Constant.errorMessage + e.Message);
 
             }
 
