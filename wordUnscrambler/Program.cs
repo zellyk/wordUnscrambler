@@ -56,9 +56,13 @@ namespace wordUnscrambler
                     {
                         Console.WriteLine(Constant.restartMessage);
                         restartLoop = Console.ReadLine();
-                    } while (!restartLoop.ToUpper().Equals("Y") && !restartLoop.ToUpper().Equals("YES") && !restartLoop.ToUpper().Equals("N") && !restartLoop.ToUpper().Equals("NO"));
-                } while (restartLoop.ToUpper().Equals("Y"));
 
+                    } 
+
+                         while (!restartLoop.ToUpper().Equals("Y") && !restartLoop.ToUpper().Equals("YES") && !restartLoop.ToUpper().Equals("N") && !restartLoop.ToUpper().Equals("NO"));
+                } 
+
+                     while (restartLoop.ToUpper().Equals("Y"));
 
             }
 
@@ -103,14 +107,14 @@ namespace wordUnscrambler
             List<MatchedWord> matchedWords = wordMatcher.Match(scrambledWords, wordList);
 
             if (matchedWords.Count == 0) {
-                Console.WriteLine("No match found...");
+                Console.WriteLine(Constant.wordsNotFoundMessage);
             }
 
             else
             {
                 foreach(MatchedWord matched in matchedWords)
                 {
-                    Console.WriteLine("Match found for {0}:{1}", matched.ScrambledWord, matched.Word);
+                    Console.WriteLine(Constant.matchFoundMessage, matched.ScrambledWord, matched.Word);
                 }
             }
 
