@@ -18,6 +18,7 @@ namespace wordUnscrambler
         public const string wordsNotFoundMessage = "No match found...";
         public const string matchFoundMessage = "Match found for {0}: {1}";
         public const string restartMessage = "Would you like to continue? Y/N";
+        public const string emptyString = "String is empty";
 
 
     }

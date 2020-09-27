@@ -31,7 +31,7 @@ namespace wordUnscrambler
                     {
                         Console.WriteLine(Constant.fileSelectionMessage);
 
-                     option = Console.ReadLine() ?? throw new Exception("String is empty");
+                     option = Console.ReadLine() ?? throw new Exception(Constant.emptyString);
 
                     }
                     while (!option.ToUpper().Equals("F") && !option.ToUpper().Equals("M"));
@@ -93,7 +93,6 @@ namespace wordUnscrambler
             // extract words into a string
 
             // call DisplayMatchedScrambledWords passing the scrambled words string array
-
 
 
         }
