@@ -21,29 +21,44 @@ namespace wordUnscrambler
             try
             {
 
+                string restartLoop = "Y";
 
-                Console.WriteLine(Constant.fileSelectionMessage);
-
-                string option = Console.ReadLine() ?? throw new Exception("String is empty");
-
-                switch (option.ToUpper())
+                do 
                 {
-                    case "F":
-                        Console.WriteLine(Constant.fileNameMessage);
-                        ExecuteScrambledWordsInFileScenario();
-                        break;
-                    case "M":
-                        Console.WriteLine(Constant.userInputFormatMessage);
-                        ExecuteScrambledWordsManualEntryScenario();
-                        break;
-                    default:
-                        Console.WriteLine(Constant.optionNotRecognized);
-                        break;
+                    string option = "";
 
-                }
+                    do
+                    {
+                        Console.WriteLine(Constant.fileSelectionMessage);
 
-                // Optional for now (when you have no loop) >>>>>>>>>> take out when finished. 
-                Console.ReadKey();
+                     option = Console.ReadLine() ?? throw new Exception("String is empty");
+
+                    }
+                    while (!option.ToUpper().Equals("F") && !option.ToUpper().Equals("M"));
+                    
+                    switch (option.ToUpper())
+                    {
+                        case "F":
+                            Console.WriteLine(Constant.fileNameMessage);
+                            ExecuteScrambledWordsInFileScenario();
+                            break;
+                        case "M":
+                            Console.WriteLine(Constant.userInputFormatMessage);
+                            ExecuteScrambledWordsManualEntryScenario();
+                            break;
+                        default:
+                            Console.WriteLine(Constant.optionNotRecognized);
+                            break;
+
+                    }
+
+                    do
+                    {
+                        Console.WriteLine(Constant.restartMessage);
+                        restartLoop = Console.ReadLine();
+                    } while (!restartLoop.ToUpper().Equals("Y") && !restartLoop.ToUpper().Equals("YES") && !restartLoop.ToUpper().Equals("N") && !restartLoop.ToUpper().Equals("NO"));
+                } while (restartLoop.ToUpper().Equals("Y"));
+
 
             }
 
